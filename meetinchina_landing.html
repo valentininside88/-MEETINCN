@@ -68,7 +68,7 @@
 
   /* ===== hero ===== */
   .hero{background:radial-gradient(120% 90% at 80% -12%, #181109 0%, #0F0B07 58%); color:var(--cream); position:relative; overflow:hidden; padding:84px 0 0;}
-  .hero .ghost{position:absolute; right:-4%; top:-90px; font-family:'Noto Serif SC',serif; font-weight:700; font-size:clamp(300px,42vw,560px); line-height:1; color:rgba(194,145,63,.06); pointer-events:none; will-change:transform;}
+  .hero .ghost{position:absolute; right:1.5%; top:-20px; font-family:'Noto Serif SC',serif; font-weight:700; font-size:clamp(260px,36vw,480px); line-height:1; color:rgba(194,145,63,.06); pointer-events:none; will-change:transform;}
   .hero .wrap{position:relative; z-index:2;}
   .hero .vb{width:46px; height:5px; background:var(--verm); margin-bottom:22px;}
   .hero .atm{font-family:'DM Mono',monospace; font-size:clamp(10px,1.6vw,13px); letter-spacing:.42em; text-transform:uppercase; color:var(--goldL); margin-bottom:26px;}
@@ -241,10 +241,13 @@
   .navl.open .burger span{opacity:0;}
   .navl.open .burger::before{top:50%; transform:translateY(-50%) rotate(45deg);}
   .navl.open .burger::after{bottom:auto; top:50%; transform:translateY(-50%) rotate(-45deg);}
+  .ctam{display:none;}
   @media (max-width:720px){
     .burger{display:block;}
     .wm{white-space:nowrap; font-size:15px;}
-    .navl .cta{padding:9px 13px; font-size:11px; letter-spacing:.1em;}
+    .navl .cta{display:none;}
+    .navlinks .ctam{display:block; margin:8px 16px 10px; padding:13px; text-align:center; background:var(--verm); color:#fff; border-top:none; font-family:'Manrope',sans-serif; font-weight:700; font-size:13px; letter-spacing:.04em;}
+    .navlinks .ctam:hover{color:#fff;}
     .navlinks{position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:stretch; gap:0;
       background:rgba(15,11,7,.98); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px);
       border-bottom:1px solid #221A11; padding:6px 0; display:none;}
@@ -282,6 +285,7 @@
       <a href="meetinchina_interpreters.html">For interpreters</a>
       <a href="meet_verify.html">Verify</a>
       <a href="meet_signin.html">Sign in</a>
+      <a class="ctam" href="#order">Request a quote →</a>
       </div>
       <a class="cta" href="#order">Request a quote</a>
       <button class="burger" type="button" aria-label="Menu" aria-expanded="false"><span></span></button>
