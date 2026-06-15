@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="supported-color-schemes" content="light">
+<title>MEET [IN] CHINA — Request received</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="any">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0F0B07">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="MEET">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Manrope:wght@500;700;800&family=DM+Mono:wght@400;500&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
+<script>document.documentElement.className='js';</script>
+<style>
+  html{color-scheme:only light; background:#FAF7F1 !important;}
+  :root{--paper:#FAF7F1; --ink:#0F0B07; --body:#2B241B; --muted:#6E6252;
+    --verm:#9E3322; --verm2:#B5412B; --gold:#C2913F; --goldL:#E0BC74; --hair:#E2DACB; --cream:#F4EAD2; --ok:#5E7A3A;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#FAF7F1 !important; color:var(--body); font-size:17px; font-weight:500; line-height:1.65;
+       font-family:'Manrope',-apple-system,'Segoe UI',Roboto,Arial,sans-serif; overflow-x:hidden; min-height:100vh; display:flex; flex-direction:column;}
+  .wrap{max-width:640px; margin:0 auto; padding:0 24px;}
+  .brk{color:var(--verm);} a{color:inherit;} :focus-visible{outline:2.5px solid var(--verm); outline-offset:3px;}
+  .grain{position:fixed; inset:0; z-index:50; pointer-events:none; opacity:.03; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .topbar{background:rgba(15,11,7,.95); border-bottom:1px solid #221A11;}
+  .topbar .in{display:flex; justify-content:space-between; align-items:center; padding:15px 24px; max-width:640px; margin:0 auto;}
+  .wm{font-family:'Manrope'; font-weight:800; font-size:15px; letter-spacing:.04em; color:var(--cream); text-decoration:none; white-space:nowrap;}
+  .back{font-family:'DM Mono',monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#B7A98D; text-decoration:none;}
+  .back:hover{color:var(--goldL);}
+  main{flex:1; display:flex; align-items:center; padding:56px 0;}
+  .card{text-align:center;}
+  .seal{font-family:'Noto Serif SC',serif; font-weight:900; color:var(--cream); background:var(--verm); width:92px; height:92px; display:grid; place-items:center; font-size:54px; margin:0 auto 22px; transform:rotate(-4deg);
+    box-shadow:inset 0 0 0 3px rgba(244,234,210,.9), inset 0 0 0 6px var(--verm), 0 8px 22px rgba(158,51,34,.26);}
+  @media (prefers-reduced-motion:no-preference){ .js .seal{animation:stampIn .55s cubic-bezier(.34,1.2,.5,1) both;} }
+  @keyframes stampIn{0%{opacity:0; transform:translateY(-40px) scale(1.7) rotate(7deg);}55%{opacity:1; transform:translateY(0) scale(.9) rotate(-5deg);}100%{opacity:1; transform:scale(1) rotate(-4deg);}}
+  .eyebrow{font-family:'DM Mono',monospace; font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:var(--verm);}
+  h1{font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; font-size:clamp(36px,7vw,56px); color:var(--ink); line-height:1.04; margin:10px 0 14px;}
+  .lede{color:#52483A; font-size:17px; max-width:480px; margin:0 auto 4px;}
+  .lede b{color:var(--ink);}
+  .steps{list-style:none; counter-reset:s; max-width:440px; margin:30px auto 0; text-align:left;}
+  .steps li{counter-increment:s; position:relative; padding:14px 0 14px 44px; border-top:1px solid var(--hair); color:#52483A; font-size:15px;}
+  .steps li:last-child{border-bottom:1px solid var(--hair);}
+  .steps li::before{content:counter(s); position:absolute; left:0; top:12px; width:28px; height:28px; border:1.5px solid var(--gold); color:var(--gold); border-radius:50%; display:grid; place-items:center; font-family:'DM Mono',monospace; font-size:13px;}
+  .acts{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:30px;}
+  .btn{font-family:'Manrope'; font-weight:700; font-size:15px; padding:14px 24px; border:none; cursor:pointer; text-decoration:none; transition:transform .12s, background .18s, border-color .18s;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn.prim{background:var(--verm); color:#fff;} .btn.prim:hover{background:var(--verm2);}
+  .btn.ghost{background:transparent; border:1.5px solid var(--hair); color:var(--ink);} .btn.ghost:hover{border-color:var(--ink);}
+  footer{background:var(--ink); padding:30px 0; text-align:center;}
+  .fglyph{font-family:'Noto Serif SC',serif; font-size:24px; color:rgba(194,145,63,.5); line-height:1;}
+  .fbot{margin-top:8px; font-family:'DM Mono',monospace; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:#6E6252;}
+  @media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important;} }
+  @media (prefers-color-scheme:dark){ html,body{background:#FAF7F1 !important;} body{color:#2B241B !important;} }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<nav class="topbar"><div class="in">
+  <a class="wm" href="meetinchina_landing.html">MEET <span class="brk">[</span>IN<span class="brk">]</span> CHINA</a>
+  <a class="back" href="meetinchina_landing.html">&larr; Back to site</a>
+</div></nav>
+
+<main><div class="wrap"><div class="card">
+  <div class="seal">见</div>
+  <div class="eyebrow">jiàn 见 · received</div>
+  <h1>Request received</h1>
+  <p class="lede">We’ll read your brief and reply within <b>4 working hours</b>. The next message you get is a price and a proposed interpreter — not a sales call.</p>
+  <ol class="steps">
+    <li>We match a certified interpreter to your city and dates.</li>
+    <li>You approve the quote — one all-in price.</li>
+    <li>They go on the ground, and you get the report.</li>
+  </ol>
+  <div class="acts">
+    <a class="btn prim" href="meet_report_room_prototype.html">See a sample report &rarr;</a>
+    <a class="btn ghost" href="meetinchina_landing.html">Back to site</a>
+  </div>
+</div></div></main>
+
+<footer>
+  <div class="fglyph">见</div>
+  <div class="fbot">MEET [IN] CHINA · meetinchina.eu</div>
+</footer>
+<script>if('serviceWorker' in navigator && location.protocol.indexOf('http')===0){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
+</body>
+</html>

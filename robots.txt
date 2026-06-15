@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /meet_cabinet_client.html
+Disallow: /meet_cabinet_interpreter.html
+Disallow: /meet_thread.html
+Disallow: /meet_signin.html
+Disallow: /thanks.html
+Disallow: /meet_academy_test_prototype.html
+
+Sitemap: https://meetinchina.eu/sitemap.xml

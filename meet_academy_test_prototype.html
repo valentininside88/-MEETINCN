@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="supported-color-schemes" content="light">
+<title>MEET Academy — Certification Test</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="any">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@500;700;800&family=DM+Mono:wght@400;500&family=Noto+Serif+SC:wght@700&display=swap" rel="stylesheet">
+<script>document.documentElement.className='js';</script>
+<style>
+  html{color-scheme: only light; background:#FAF7F1 !important;}
+  :root{color-scheme: only light;
+    --paper:#FAF7F1; --paper2:#F3EEE4; --ink:#181410; --body:#2B241B;
+    --muted:#6E6252; --verm:#9E3322; --verm2:#B5412B; --gold:#C2913F; --hair:#E2DACB; --cream:#F4EAD2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#FAF7F1 !important; color:var(--body); font-size:17px; font-weight:500; line-height:1.65;
+       font-family:'Manrope',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+  .brk{color:var(--verm);}
+  .mono{font-family:'DM Mono',ui-monospace,Menlo,Consolas,monospace;}
+  .lbl{font-family:'DM Mono',ui-monospace,monospace; font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); font-weight:500;}
+
+  /* dark header */
+  .hd{background:var(--ink); padding:40px 0 34px; position:relative; overflow:hidden;}
+  .hd .ghost{position:absolute; right:-20px; top:-60px; font-family:'Noto Serif SC',serif; font-weight:700; font-size:240px; line-height:1; pointer-events:none;
+    color:transparent; background:linear-gradient(150deg,#E0BC74 0%,#C2913F 55%,#9a6c30 100%); -webkit-background-clip:text; background-clip:text; opacity:.08;
+    -webkit-mask-image:linear-gradient(132deg,#000 34%,rgba(0,0,0,.4) 50%,transparent 64%); mask-image:linear-gradient(132deg,#000 34%,rgba(0,0,0,.4) 50%,transparent 64%);
+    -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; -webkit-mask-size:260% 260%; mask-size:260% 260%; -webkit-mask-position:0% 0%; mask-position:0% 0%;}
+  .hd .vb{width:42px; height:5px; background:var(--verm); margin-bottom:16px;}
+  .hd .wm{font-family:'Manrope'; font-weight:800; font-size:17px; letter-spacing:.04em; color:var(--cream);}
+  .hd h1{font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; font-size:clamp(26px,4.4vw,38px); color:var(--cream); margin-top:14px; line-height:1.18;}
+  .hd .meta{margin-top:12px; font-family:'DM Mono',ui-monospace,monospace; font-size:13px; letter-spacing:.1em; text-transform:uppercase; color:#9C8E76;}
+
+  /* progress */
+  .progress{background:var(--ink); padding-bottom:0;}
+  .pbar{height:4px; background:#33291C;}
+  .pfill{height:100%; width:0%; background:linear-gradient(90deg,var(--gold),var(--verm2)); transition:width .35s ease;}
+
+  /* card */
+  .stage{padding:42px 0 70px;}
+  .qcard{background:#fff; border:1px solid var(--hair); padding:30px 30px 26px; box-shadow:0 4px 18px rgba(24,20,16,.05);}
+  .qmod{font-family:'DM Mono',ui-monospace,monospace; font-size:12.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--verm); margin-bottom:10px;}
+  .qtext{font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; font-size:25px; color:var(--ink); line-height:1.3; margin-bottom:22px;}
+  .opt{display:flex; gap:14px; align-items:flex-start; border:1.5px solid var(--hair); padding:15px 17px; margin-bottom:11px; cursor:pointer; transition:border-color .15s, background .15s; background:#fff;}
+  .opt:hover{border-color:var(--gold);}
+  .opt.sel{border-color:var(--verm); background:#FDF3EF;}
+  .opt .dot{width:18px; height:18px; border:2px solid var(--muted); border-radius:50%; flex:none; margin-top:3px; position:relative;}
+  .opt.sel .dot{border-color:var(--verm);}
+  .opt.sel .dot::after{content:''; position:absolute; inset:3px; background:var(--verm); border-radius:50%;}
+  .nav{display:flex; justify-content:space-between; align-items:center; margin-top:24px;}
+  .qcount{font-family:'DM Mono',ui-monospace,monospace; font-size:13px; letter-spacing:.14em; color:var(--muted);}
+  .btn{font-family:'Manrope'; font-weight:700; font-size:15.5px; padding:14px 30px; border:none; cursor:pointer; letter-spacing:.02em; transition:transform .12s;}
+  .btn:hover{transform:translateY(-1px);}
+  .btn.prim{background:var(--verm); color:#fff;}
+  .btn.prim:disabled{background:#D8CDBA; cursor:not-allowed; transform:none;}
+  .btn.ghost{background:transparent; border:1.5px solid var(--ink); color:var(--ink);}
+
+  /* intro & result */
+  .panel{background:#fff; border:1px solid var(--hair); padding:38px 34px; box-shadow:0 4px 18px rgba(24,20,16,.05);}
+  .panel h2{font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; font-size:32px; color:var(--ink); line-height:1.2;}
+  .goldline{height:2px; background:linear-gradient(90deg,var(--gold),transparent); width:120px; margin:14px 0 20px;}
+  .rules li{margin-bottom:10px; padding-left:22px; position:relative;}
+  .rules{list-style:none; margin:0 0 26px;}
+  .rules li::before{content:'['; color:var(--verm); position:absolute; left:0; font-family:'DM Mono',monospace;}
+  .score{font-family:'DM Mono',ui-monospace,monospace; font-size:54px; color:var(--ink); letter-spacing:.02em; margin:8px 0 2px;}
+  .verdict{font-family:'Manrope'; font-weight:800; font-size:21px; letter-spacing:.02em; margin-bottom:8px;}
+  .verdict.pass{color:var(--gold);}
+  .verdict.fail{color:var(--verm);}
+  .breakdown{margin-top:22px; border-top:1px solid var(--hair);}
+  .brow{display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px solid var(--hair); font-size:15.5px;}
+  .brow .r{font-family:'DM Mono',monospace; font-size:14px; flex:none;}
+  .ok{color:#7A8C3F;} .bad{color:var(--verm);}
+  footer{background:var(--ink); padding:34px 0 44px; margin-top:0;}
+  .opby{font-family:'DM Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.2em; text-transform:uppercase; color:#8A7C64; line-height:2.2;}
+  .hidden{display:none;}
+  @media (prefers-color-scheme: dark){ html,body{background:#FAF7F1 !important;} body{color:#2B241B !important;} }
+  @media (max-width:640px){ .qcard,.panel{padding:24px 20px;} .qtext{font-size:22px;} }
+  .grain{position:fixed; inset:0; z-index:50; pointer-events:none; opacity:.035; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .opby-glyph{font-family:'Noto Serif SC',serif; font-size:28px; color:rgba(194,145,63,.45); line-height:1; margin-bottom:12px;}
+  @media (prefers-reduced-motion:no-preference){
+    .js .hd .ghost{opacity:0; -webkit-mask-position:120% 120%; mask-position:120% 120%; animation:ghostReveal 2.6s cubic-bezier(.5,0,.18,1) .15s forwards;}
+  }
+  @keyframes ghostReveal{0%{opacity:0;-webkit-mask-position:120% 120%;mask-position:120% 120%;}55%{opacity:.2;-webkit-mask-position:0% 0%;mask-position:0% 0%;}72%{opacity:.2;}100%{opacity:.08;-webkit-mask-position:0% 0%;mask-position:0% 0%;}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<div class="hd">
+  <div class="wrap" style="position:relative;">
+    <div class="ghost">见</div>
+    <div class="vb"></div>
+    <a class="wm" href="meetinchina_interpreters.html" style="text-decoration:none;">MEET <span class="brk">[</span>IN<span class="brk">]</span> CHINA</a>
+    <h1>MEET Academy — Certification Test</h1>
+    <div class="meta">CANDIDATE · LI WENJING · MODULES M1–M5 · PASS MARK 80%</div>
+  </div>
+</div>
+<div class="progress"><div class="pbar"><div class="pfill" id="pfill"></div></div></div>
+
+<div class="stage"><div class="wrap">
+
+  <!-- INTRO -->
+  <div class="panel" id="intro">
+    <span class="lbl" style="color:var(--verm);">BEFORE YOU START</span>
+    <h2>Ten questions. One standard.</h2>
+    <div class="goldline"></div>
+    <ul class="rules">
+      <li>10 questions across modules M1–M5. One answer each.</li>
+      <li>Pass mark: 8 of 10. The exam can be retaken once.</li>
+      <li>Passing unlocks the supervised test order — the final step to MEET Certified.</li>
+      <li>Answer as you would act on a real order. The standard is the answer.</li>
+    </ul>
+    <button class="btn prim" onclick="start()">Start the test</button>
+  </div>
+
+  <!-- QUESTION -->
+  <div class="qcard hidden" id="qcard">
+    <div class="qmod" id="qmod"></div>
+    <div class="qtext" id="qtext"></div>
+    <div id="opts"></div>
+    <div class="nav">
+      <span class="qcount" id="qcount"></span>
+      <button class="btn prim" id="nextbtn" disabled onclick="next()">Next</button>
+    </div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="panel hidden" id="result">
+    <span class="lbl" style="color:var(--verm);">RESULT</span>
+    <div class="score" id="scoreEl"></div>
+    <div class="verdict" id="verdictEl"></div>
+    <p id="verdictNote"></p>
+    <div class="breakdown" id="breakdown"></div>
+    <div style="margin-top:26px; display:flex; gap:12px; flex-wrap:wrap;">
+      <button class="btn ghost" onclick="restart()">Retake (1 attempt left)</button>
+    </div>
+  </div>
+
+</div></div>
+
+<footer><div class="wrap">
+  <div class="opby-glyph">见</div>
+  <div class="opby">MEET ACADEMY · MEETINCHINA.EU<br>CONFIDENTIAL · CANDIDATE COPY</div>
+</div></footer>
+
+<script>
+const Q=[
+ {m:'M1 · BRAND & STANDARD', q:'Your order starts at 7:00. What do you wear?',
+  o:['Smart casual — it is a long day on the fair floor','Suit and white shirt. Always, no exceptions','Suit, shirt colour of your choice','Whatever the client wears'], a:1},
+ {m:'M1 · BRAND & STANDARD', q:'The client lands at 14:20. When are you at the arrivals exit?',
+  o:['14:20 sharp','13:40 — forty minutes before landing','14:00 — twenty minutes is enough','When the client messages that he has landed'], a:1},
+ {m:'M2 · ORDER SCENARIOS', q:'First minutes after meeting the client at the airport — the right sequence:',
+  o:['Luggage → car → plan on the way','Greet by name, introduce yourself, offer water, confirm the day plan in two minutes','Photo for the report, then greet','Call the factory to confirm, then greet the client'], a:1},
+ {m:'M2 · ORDER SCENARIOS', q:'Deadline for a structured report on a remote order:',
+  o:['Same evening','Within 48 hours','Within a week','When the client asks for it'], a:1},
+ {m:'M3 · TERMINOLOGY', q:'The supplier says: "MOQ is 5 tons." What did he tell you?',
+  o:['Maximum order they can produce','Minimum order quantity they will accept','Monthly output quota','Delivery time in weeks'], a:1},
+ {m:'M3 · TERMINOLOGY', q:'A pharma client asks if the plant is "GMP-audited". GMP relates to:',
+  o:['Export licensing','Manufacturing practice and quality standards','Customs classification','Shipping insurance'], a:1},
+ {m:'M4 · LEAD DETECTION', q:'During the visit the client says: "Could you find me this 20% cheaper somewhere?" You:',
+  o:['Promise to find it — it keeps the client happy','Give him your cousin\'s factory contact','Flag it as a sourcing signal and pass it to the platform — no promises to the client','Tell him prices are the same everywhere'], a:2},
+ {m:'M4 · LEAD DETECTION', q:'Why do sourcing signals matter to you personally?',
+  o:['They do not — sourcing is not my job','They grow my client book — referral income on closed deals','They reduce my workload','The client tips better'], a:1},
+ {m:'M5 · PLATFORM & REPORT', q:'Photos for the report are uploaded:',
+  o:['Best shots only, lightly edited','Originals, no filters, with hall/booth captions','Compressed to save data','To the client directly in WeChat'], a:1},
+ {m:'M5 · CONFIDENTIALITY', q:'The client asks how much you earn from the platform and which factories MEET works with. You:',
+  o:['Answer honestly — transparency builds trust','Name the factories but not the money','Politely decline: terms and factory names are confidential, always','Ask the operator for permission to tell him'], a:2},
+];
+let i=0, sel=-1, answers=[];
+const $=id=>document.getElementById(id);
+function start(){ $('intro').classList.add('hidden'); $('qcard').classList.remove('hidden'); render(); }
+function render(){
+  const q=Q[i]; sel=-1; $('nextbtn').disabled=true;
+  $('qmod').textContent=q.m;
+  $('qtext').textContent=q.q;
+  $('qcount').textContent=`QUESTION ${i+1} / ${Q.length}`;
+  $('nextbtn').textContent = i===Q.length-1 ? 'Finish' : 'Next';
+  const box=$('opts'); box.innerHTML='';
+  q.o.forEach((t,idx)=>{
+    const d=document.createElement('div'); d.className='opt';
+    d.innerHTML=`<div class="dot"></div><div>${t}</div>`;
+    d.onclick=()=>{ sel=idx; [...box.children].forEach(c=>c.classList.remove('sel')); d.classList.add('sel'); $('nextbtn').disabled=false; };
+    box.appendChild(d);
+  });
+  $('pfill').style.width = (i/Q.length*100)+'%';
+}
+function next(){
+  answers.push(sel);
+  if(i<Q.length-1){ i++; render(); }
+  else finish();
+}
+function finish(){
+  $('pfill').style.width='100%';
+  $('qcard').classList.add('hidden');
+  const score=answers.reduce((s,a,idx)=>s+(a===Q[idx].a?1:0),0);
+  const pass=score>=8;
+  $('scoreEl').textContent=`${score} / ${Q.length}`;
+  const v=$('verdictEl'); v.textContent=pass?'PASSED':'NOT PASSED'; v.className='verdict '+(pass?'pass':'fail');
+  $('verdictNote').textContent = pass
+    ? 'The supervised test order is now unlocked. Your city captain will contact you within 48 hours to schedule it. MEET Certified is one order away.'
+    : 'Pass mark is 8 of 10. Review the Field Pack and module materials — one retake is available. The standard is the answer.';
+  const bd=$('breakdown'); bd.innerHTML='';
+  Q.forEach((q,idx)=>{
+    const ok=answers[idx]===q.a;
+    const r=document.createElement('div'); r.className='brow';
+    r.innerHTML=`<span>${idx+1}. ${q.q}</span><span class="r ${ok?'ok':'bad'}">${ok?'CORRECT':'REVIEW '+q.m.split(' ·')[0]}</span>`;
+    bd.appendChild(r);
+  });
+  $('result').classList.remove('hidden');
+}
+function restart(){ i=0; sel=-1; answers=[]; $('result').classList.add('hidden'); $('qcard').classList.remove('hidden'); render(); }
+</script>
+</body>
+</html>

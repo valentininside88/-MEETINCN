@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="supported-color-schemes" content="light">
+<title>MEET [IN] CHINA — Verify a certificate</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="any">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0F0B07">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="MEET">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MEET [IN] CHINA">
+<meta property="og:title" content="Verify a MEET certificate">
+<meta property="og:description" content="Every MEET interpreter carries a certificate verifiable by number. Confirm name, city, languages and status.">
+<meta property="og:image" content="https://meetinchina.eu/og-image.png">
+<meta property="og:url" content="https://meetinchina.eu/meet_verify.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Verify a MEET certificate">
+<meta name="twitter:description" content="Every MEET interpreter carries a certificate verifiable by number. Confirm name, city, languages and status.">
+<meta name="twitter:image" content="https://meetinchina.eu/og-image.png">
+<meta name="description" content="Every MEET interpreter carries a certificate verifiable by number. Enter it here to confirm name, city, languages and status.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Manrope:wght@500;700;800&family=DM+Mono:wght@400;500&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
+<script>document.documentElement.className='js';</script>
+<style>
+  html{color-scheme:only light; background:#FAF7F1 !important;}
+  :root{--paper:#FAF7F1; --paper2:#F3EEE4; --ink:#0F0B07; --body:#2B241B; --muted:#6E6252;
+    --verm:#9E3322; --verm2:#B5412B; --gold:#C2913F; --goldL:#E0BC74; --hair:#E2DACB; --cream:#F4EAD2; --ok:#5E7A3A;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#FAF7F1 !important; color:var(--body); font-size:17px; font-weight:500; line-height:1.6;
+       font-family:'Manrope',-apple-system,'Segoe UI',Roboto,Arial,sans-serif; overflow-x:hidden;}
+  .wrap{max-width:680px; margin:0 auto; padding:0 24px;}
+  .brk{color:var(--verm);} a{color:inherit;} :focus-visible{outline:2.5px solid var(--verm); outline-offset:3px;}
+  .grain{position:fixed; inset:0; z-index:50; pointer-events:none; opacity:.03; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+
+  .topbar{position:sticky; top:0; z-index:40; background:rgba(15,11,7,.92); backdrop-filter:blur(8px); border-bottom:1px solid #221A11;}
+  .topbar .in{display:flex; justify-content:space-between; align-items:center; padding:15px 24px; max-width:680px; margin:0 auto;}
+  .wm{font-family:'Manrope'; font-weight:800; font-size:15px; letter-spacing:.04em; color:var(--cream); text-decoration:none; white-space:nowrap;}
+  .back{font-family:'DM Mono',monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#B7A98D; text-decoration:none;}
+  .back:hover{color:var(--goldL);}
+
+  .lead{text-align:center; padding:50px 0 8px;}
+  .lead .eyebrow{font-family:'DM Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--verm);}
+  .lead h1{font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; font-size:clamp(34px,6vw,52px); color:var(--ink); line-height:1.05; margin-top:10px;}
+  .lead p{max-width:480px; margin:14px auto 0; color:var(--muted); font-size:16px;}
+
+  .form{display:flex; gap:10px; margin:30px auto 0; max-width:460px;}
+  @media (max-width:480px){ .form{flex-direction:column;} }
+  .form input{flex:1; font-family:'DM Mono',monospace; font-size:16px; letter-spacing:.06em; color:var(--ink); background:#fff; border:1.5px solid var(--hair); padding:15px 16px; text-transform:uppercase;}
+  .form input:focus{outline:none; border-color:var(--verm);}
+  .form button{font-family:'Manrope'; font-weight:700; font-size:15px; padding:15px 26px; border:none; cursor:pointer; background:var(--verm); color:#fff; transition:background .2s, transform .12s;}
+  .form button:hover{background:var(--verm2); transform:translateY(-1px);}
+  .hint{text-align:center; margin-top:12px; font-family:'DM Mono',monospace; font-size:12px; letter-spacing:.04em; color:var(--muted);}
+  .hint a{color:var(--verm); text-decoration:underline; cursor:pointer;}
+
+  .result{max-width:520px; margin:34px auto 0; min-height:1px;}
+  .rcard{position:relative; background:#FBF9F4; border:1px solid var(--hair); padding:clamp(24px,5vw,38px); box-shadow:0 24px 56px rgba(15,11,7,.14); overflow:hidden;}
+  .rcard::before{content:''; position:absolute; inset:7px; border:1px solid rgba(194,145,63,.30); pointer-events:none;}
+  .rzone{display:flex; align-items:center; gap:clamp(16px,4vw,26px);}
+  .rzone .rinfo .vv{font-family:'Cormorant Garamond',Georgia,serif; font-style:italic; font-weight:600; font-size:clamp(22px,5vw,30px); color:var(--ok); display:flex; align-items:center; gap:8px;}
+  .rzone .rinfo .vv .tick{font-style:normal;}
+  .rzone .rinfo .vx{margin-top:3px; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted);}
+  .seal-slot{margin-left:auto; position:relative; width:clamp(96px,24vw,124px); height:clamp(96px,24vw,124px); flex:none;}
+  .seal{position:absolute; inset:0; background:var(--verm); color:var(--cream); display:grid; place-items:center; transform:rotate(-4deg);
+    box-shadow:inset 0 0 0 3px rgba(244,234,210,.9), inset 0 0 0 6px var(--verm), 0 6px 18px rgba(158,51,34,.28); font-family:'Noto Serif SC',serif; font-weight:900;}
+  .seal .g{font-size:clamp(50px,13vw,72px); line-height:1;}
+  .seal::after{content:''; position:absolute; inset:0; mix-blend-mode:screen; opacity:.16; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E");}
+  .seal-slot::before{content:''; position:absolute; inset:6px; background:var(--verm); filter:blur(10px); opacity:0; z-index:-1;}
+  .seal.stamp{animation:stampIn .5s cubic-bezier(.34,1.2,.5,1) forwards;}
+  @keyframes stampIn{0%{opacity:0; transform:translateY(-44px) scale(1.8) rotate(7deg);}55%{opacity:1; transform:translateY(0) scale(.9) rotate(-5deg);}72%{transform:scale(1.05) rotate(-4deg);}100%{opacity:1; transform:scale(1) rotate(-4deg);}}
+  .seal-slot.go::before{animation:bleed .55s ease-out;}
+  @keyframes bleed{0%{opacity:0; transform:scale(.78);}28%{opacity:.45;}100%{opacity:0; transform:scale(1.3);}}
+
+  .rgrid{margin-top:24px; border-top:1px solid var(--hair); padding-top:20px; display:grid; grid-template-columns:1fr 1fr; gap:16px 24px;}
+  @media (max-width:440px){ .rgrid{grid-template-columns:1fr;} }
+  .rgrid .f .k{font-family:'DM Mono',monospace; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted);}
+  .rgrid .f .v{font-family:'Manrope'; font-weight:700; font-size:16px; color:var(--ink); margin-top:3px;}
+  .rgrid .f .v .cn{font-family:'Noto Serif SC',serif; color:var(--gold); margin-right:4px;}
+  .rfoot{margin-top:20px; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#8A7C64;}
+
+  .invalid{max-width:520px; margin:34px auto 0; background:#fff; border:1px solid var(--hair); border-left:4px solid var(--muted); padding:26px 28px;}
+  .invalid .it{font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; font-size:24px; color:var(--ink);}
+  .invalid p{margin-top:8px; color:var(--muted); font-size:15px;}
+  .invalid code{font-family:'DM Mono',monospace; color:var(--verm);}
+
+  footer{background:var(--ink); padding:40px 0 50px; margin-top:60px; position:relative; overflow:hidden;}
+  footer::before{content:''; position:absolute; inset:0; background:radial-gradient(70% 120% at 100% 0%, rgba(194,145,63,.10), transparent 60%); pointer-events:none;}
+  footer .wrap{position:relative; z-index:2; text-align:left;}
+  .fglyph{font-family:'Noto Serif SC',serif; font-size:28px; color:rgba(194,145,63,.5); line-height:1; margin-bottom:12px;}
+  .fwm{font-family:'Manrope'; font-weight:800; font-size:16px; color:var(--cream); letter-spacing:.04em;}
+  .fbot{margin-top:12px; font-family:'DM Mono',monospace; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:#6E6252;}
+
+  @media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important;} .seal{opacity:1 !important;} }
+  @media (prefers-color-scheme:dark){ html,body{background:#FAF7F1 !important;} body{color:#2B241B !important;} }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+
+<nav class="topbar"><div class="in">
+  <a class="wm" href="meetinchina_landing.html">MEET <span class="brk">[</span>IN<span class="brk">]</span> CHINA</a>
+  <a class="back" href="meetinchina_landing.html">&larr; Back to site</a>
+</div></nav>
+
+<div class="wrap">
+  <div class="lead">
+    <div class="eyebrow">jiàn 见 · verify</div>
+    <h1>Verify a certificate</h1>
+    <p>Every MEET interpreter carries a certificate verifiable by number. Enter it to confirm who you’re dealing with.</p>
+  </div>
+
+  <div class="form">
+    <input id="num" type="text" placeholder="MIC-2026-014" autocomplete="off" aria-label="Certificate number" spellcheck="false">
+    <button id="go" type="button">Verify</button>
+  </div>
+  <p class="hint">Don’t have one to hand? Try <a id="try">MIC-2026-014</a>.</p>
+
+  <div class="result" id="result" aria-live="polite"></div>
+</div>
+
+<footer><div class="wrap">
+  <div class="fglyph">见</div>
+  <div class="fwm">MEET <span class="brk">[</span>IN<span class="brk">]</span> CHINA</div>
+  <div class="fbot">Certificate verification · meetinchina.eu</div>
+</div></footer>
+
+<script>
+(function(){
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // prototype dataset — real version queries the register
+  var DB={
+    'MIC-2026-014':{name:'Li Wenjing', cn:'广州', city:'Guangzhou', langs:'EN · DE · ZH', status:'Active', issued:'15 Sep 2026'},
+    'MIC-2025-118':{name:'Chen Wei', cn:'深圳', city:'Shenzhen', langs:'EN · ZH', status:'Active', issued:'03 Nov 2025'},
+    'MIC-2026-007':{name:'Zhang Min', cn:'义乌', city:'Yiwu', langs:'EN · ZH', status:'Active', issued:'21 Jul 2026'}
+  };
+  var input=document.getElementById('num'), result=document.getElementById('result');
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function verify(){
+    var raw=input.value.trim().toUpperCase(); if(!raw){ result.innerHTML=''; return; }
+    var rec=DB[raw];
+    if(rec){
+      result.innerHTML=''+
+        '<div class="rcard">'+
+          '<div class="rzone">'+
+            '<div class="rinfo"><div class="vv"><span class="tick">✓</span> Valid certificate</div>'+
+              '<div class="vx">Verified by MEET operations</div></div>'+
+            '<div class="seal-slot" id="slot"><div class="seal" id="seal" aria-hidden="true"><span class="g">见</span></div></div>'+
+          '</div>'+
+          '<div class="rgrid">'+
+            '<div class="f"><div class="k">Interpreter</div><div class="v">'+esc(rec.name)+'</div></div>'+
+            '<div class="f"><div class="k">Certificate</div><div class="v">'+esc(raw)+'</div></div>'+
+            '<div class="f"><div class="k">City</div><div class="v"><span class="cn">'+esc(rec.cn)+'</span> '+esc(rec.city)+'</div></div>'+
+            '<div class="f"><div class="k">Languages</div><div class="v">'+esc(rec.langs)+'</div></div>'+
+            '<div class="f"><div class="k">Status</div><div class="v">'+esc(rec.status)+'</div></div>'+
+            '<div class="f"><div class="k">Issued</div><div class="v">'+esc(rec.issued)+'</div></div>'+
+          '</div>'+
+          '<div class="rfoot">MEET Certified · jiàn 见 — to meet</div>'+
+        '</div>';
+      var seal=document.getElementById('seal'), slot=document.getElementById('slot');
+      if(!reduce){ seal.style.opacity=0; void seal.offsetWidth; seal.classList.add('stamp'); slot.classList.add('go'); }
+    } else {
+      result.innerHTML='<div class="invalid"><div class="it">No certificate found</div>'+
+        '<p>We have no active certificate for <code>'+esc(raw)+'</code>. Check the number for typos, or contact us if you were given it directly.</p></div>';
+    }
+  }
+  document.getElementById('go').addEventListener('click', verify);
+  input.addEventListener('keydown', function(e){ if(e.key==='Enter') verify(); });
+  document.getElementById('try').addEventListener('click', function(){ input.value='MIC-2026-014'; verify(); });
+  // deep link ?cert=...
+  var m=location.search.match(/[?&]cert=([^&]+)/i);
+  if(m){ input.value=decodeURIComponent(m[1]); verify(); }
+})();
+</script>
+<script>if('serviceWorker' in navigator && location.protocol.indexOf('http')===0){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
+</body>
+</html>

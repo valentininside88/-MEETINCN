@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="supported-color-schemes" content="light">
+<title>MEET [IN] CHINA — Sign in</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="any">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Manrope:wght@500;700;800&family=DM+Mono:wght@400;500&family=Noto+Serif+SC:wght@700&display=swap" rel="stylesheet">
+<script>document.documentElement.className='js';</script>
+<style>
+  html{color-scheme:only light; background:#FAF7F1 !important;}
+  :root{--paper:#FAF7F1; --ink:#0F0B07; --body:#2B241B; --muted:#6E6252;
+    --verm:#9E3322; --verm2:#B5412B; --gold:#C2913F; --goldL:#E0BC74; --hair:#E2DACB; --cream:#F4EAD2; --ok:#5E7A3A;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#FAF7F1 !important; color:var(--body); font-size:16px; font-weight:500; line-height:1.6;
+       font-family:'Manrope',-apple-system,'Segoe UI',Roboto,Arial,sans-serif; overflow-x:hidden; min-height:100vh; display:flex; flex-direction:column;}
+  .wrap{max-width:460px; margin:0 auto; padding:0 24px; width:100%;}
+  .brk{color:var(--verm);} a{color:inherit;} :focus-visible{outline:2.5px solid var(--verm); outline-offset:3px;}
+  .grain{position:fixed; inset:0; z-index:50; pointer-events:none; opacity:.03; mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+  .topbar{background:rgba(15,11,7,.95); border-bottom:1px solid #221A11;}
+  .topbar .in{display:flex; justify-content:space-between; align-items:center; padding:15px 24px; max-width:1080px; margin:0 auto;}
+  .wm{font-family:'Manrope'; font-weight:800; font-size:15px; letter-spacing:.04em; color:var(--cream); text-decoration:none; white-space:nowrap;}
+  .back{font-family:'DM Mono',monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#B7A98D; text-decoration:none;}
+  .back:hover{color:var(--goldL);}
+  main{flex:1; display:flex; align-items:center; padding:48px 0;}
+  .glyph{font-family:'Noto Serif SC',serif; font-weight:700; color:var(--gold); font-size:34px; text-align:center; opacity:.8;}
+  h1{font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; font-size:36px; color:var(--ink); text-align:center; margin:8px 0 4px; line-height:1.05;}
+  .sub{text-align:center; color:var(--muted); font-size:14px; margin-bottom:24px;}
+  .tabs{display:flex; border:1.5px solid var(--hair); margin-bottom:20px;}
+  .tabs button{flex:1; background:transparent; border:none; cursor:pointer; font-family:'Manrope'; font-weight:700; font-size:14px; padding:13px 10px; color:var(--muted); transition:background .2s, color .2s;}
+  .tabs button.on{background:var(--ink); color:var(--cream);}
+  .card{background:#fff; border:1px solid var(--hair); padding:26px 26px 24px; box-shadow:0 18px 44px rgba(15,11,7,.10);}
+  label{display:block; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); margin:0 0 6px;}
+  input{width:100%; font-family:'Manrope'; font-size:15px; color:var(--ink); background:#FBF9F4; border:1.5px solid var(--hair); padding:13px 14px; margin-bottom:16px;}
+  input:focus{outline:none; border-color:var(--verm); background:#fff;}
+  .signbtn{width:100%; font-family:'Manrope'; font-weight:700; font-size:15px; padding:14px; border:none; cursor:pointer; background:var(--verm); color:#fff; transition:background .2s, transform .12s;}
+  .signbtn:hover{background:var(--verm2); transform:translateY(-1px);}
+  .alt{text-align:center; margin-top:18px; font-size:14px; color:var(--muted);}
+  .alt a{color:var(--verm); font-weight:700; text-decoration:none;} .alt a:hover{text-decoration:underline;}
+  .note{text-align:center; margin-top:18px; font-family:'DM Mono',monospace; font-size:11px; letter-spacing:.04em; color:#A99B82;}
+  footer{background:var(--ink); padding:26px 0; text-align:center;}
+  .fglyph{font-family:'Noto Serif SC',serif; font-size:22px; color:rgba(194,145,63,.5);}
+  .fbot{margin-top:6px; font-family:'DM Mono',monospace; font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:#6E6252;}
+  @media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important;} }
+  @media (prefers-color-scheme:dark){ html,body{background:#FAF7F1 !important;} body{color:#2B241B !important;} }
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<nav class="topbar"><div class="in">
+  <a class="wm" href="meetinchina_landing.html">MEET <span class="brk">[</span>IN<span class="brk">]</span> CHINA</a>
+  <a class="back" href="meetinchina_landing.html">&larr; Back to site</a>
+</div></nav>
+
+<main><div class="wrap">
+  <div class="glyph">见</div>
+  <h1>Sign in</h1>
+  <div class="sub">Your orders, reports and account — in one place.</div>
+
+  <div class="tabs" role="tablist">
+    <button id="tabClient" class="on" role="tab" aria-selected="true">I’m a client</button>
+    <button id="tabInterp" role="tab" aria-selected="false">I’m an interpreter</button>
+  </div>
+
+  <div class="card">
+    <label for="email">Email</label>
+    <input id="email" type="email" autocomplete="email" placeholder="you@company.com">
+    <label for="pw">Password</label>
+    <input id="pw" type="password" autocomplete="current-password" placeholder="••••••••">
+    <button class="signbtn" id="signbtn">Sign in →</button>
+  </div>
+
+  <div class="alt" id="altClient">No account yet? <a href="meetinchina_landing.html#order">Request a quote →</a></div>
+  <div class="alt" id="altInterp" style="display:none;">Not certified yet? <a href="meetinchina_interpreters.html#apply">Apply to the Academy →</a></div>
+
+  <div class="note">Prototype · no real authentication · sign-in opens the sample cabinet.</div>
+</div></main>
+
+<footer>
+  <div class="fglyph">见</div>
+  <div class="fbot">MEET [IN] CHINA · meetinchina.eu</div>
+</footer>
+
+<script>
+(function(){
+  var role='client';
+  var tC=document.getElementById('tabClient'), tI=document.getElementById('tabInterp');
+  var aC=document.getElementById('altClient'), aI=document.getElementById('altInterp');
+  function set(r){
+    role=r;
+    var c=(r==='client');
+    tC.classList.toggle('on',c); tC.setAttribute('aria-selected',c?'true':'false');
+    tI.classList.toggle('on',!c); tI.setAttribute('aria-selected',!c?'true':'false');
+    aC.style.display=c?'block':'none'; aI.style.display=c?'none':'block';
+  }
+  tC.addEventListener('click',function(){set('client');});
+  tI.addEventListener('click',function(){set('interpreter');});
+  // honour ?role= deep link
+  var m=location.search.match(/[?&]role=(client|interpreter)/i); if(m) set(m[1].toLowerCase());
+  document.getElementById('signbtn').addEventListener('click',function(){
+    location.href = (role==='client') ? 'meet_cabinet_client.html' : 'meet_cabinet_interpreter.html';
+  });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "name": "MEET [IN] CHINA",
+  "short_name": "MEET",
+  "description": "Assisted business presence in China — certified interpreters on the ground or remote.",
+  "start_url": "meetinchina_landing.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#FAF7F1",
+  "theme_color": "#0F0B07",
+  "icons": [
+    { "src": "favicon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "favicon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "favicon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

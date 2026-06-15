@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="supported-color-schemes" content="light">
+<title>MEET [IN] CHINA — Report MIC-0042</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="any">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&family=Noto+Serif+SC:wght@700&display=swap" rel="stylesheet">
+<script>document.documentElement.className='js';</script>
+<style>
+  html{color-scheme:only light; background:#FAF7F1 !important;}
+  :root{
+    color-scheme:only light;
+    --paper:#FAF7F1; --paper2:#F3EEE4; --ink:#181410; --ink2:#171009;
+    --body:#2B241B; --muted:#6E6252; --verm:#9E3322; --verm2:#B5412B;
+    --gold:#C2913F; --goldL:#E0BC74; --hair:#E2DACB; --cream:#F4EAD2;
+    --rail:128px; --gap:34px;
+  }
+  *{margin:0; padding:0; box-sizing:border-box;}
+  body{
+    background:#FAF7F1 !important; color:var(--body); font-size:17px;
+    font-family:'Manrope',-apple-system,'Segoe UI',Roboto,Arial,sans-serif;
+    font-weight:500; line-height:1.62; -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:960px; margin:0 auto; padding:0 24px;}
+  .brk{color:var(--verm);}
+  .mono{font-family:'DM Mono',ui-monospace,Menlo,Consolas,monospace;}
+  .lbl{
+    font-family:'DM Mono',ui-monospace,Menlo,Consolas,monospace;
+    font-size:11px; letter-spacing:.26em; text-transform:uppercase; color:var(--verm);
+  }
+
+  /* ---------- top bar ---------- */
+  .topbar{border-bottom:1px solid var(--hair); background:#FAF7F1;}
+  .topbar .in{display:flex; justify-content:space-between; align-items:center; padding:16px 24px;}
+  .mark{display:flex; flex-direction:column; gap:6px;}
+  .mark .tick{width:26px; height:4px; background:var(--verm);}
+  .wm{font-family:'Manrope'; font-weight:800; font-size:17px; letter-spacing:.04em; color:var(--ink); text-decoration:none;}
+  .status{
+    font-family:'DM Mono'; font-size:10.5px; letter-spacing:.2em; text-transform:uppercase;
+    color:var(--gold); border:1px solid var(--gold); padding:6px 12px;
+  }
+
+  /* ---------- hero / dateline ---------- */
+  .hero{background:var(--ink); position:relative; overflow:hidden; padding:54px 0 46px;}
+  .seal{
+    position:absolute; right:14px; top:8px; text-align:center; pointer-events:none; user-select:none;
+  }
+  .seal .glyph{display:grid; place-items:center; width:clamp(78px,10vw,102px); height:clamp(78px,10vw,102px);
+    font-family:'Noto Serif SC',serif; font-weight:700; font-size:clamp(44px,6vw,58px); line-height:1; color:var(--cream);
+    background:var(--verm); transform:rotate(-4deg); position:relative;
+    box-shadow:inset 0 0 0 2.5px rgba(244,234,210,.88), inset 0 0 0 4.5px var(--verm), 0 7px 18px rgba(158,51,34,.32);}
+  .seal .glyph::after{content:''; position:absolute; inset:0; mix-blend-mode:screen; opacity:.16; pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.6' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23s)'/%3E%3C/svg%3E");}
+  .seal .cap{display:block; margin-top:9px; font-family:'DM Mono'; font-size:9.5px; letter-spacing:.22em; text-transform:uppercase; color:rgba(224,188,116,.6); text-align:center;}
+  @media (prefers-reduced-motion:no-preference){
+    .js .seal .glyph{animation:stampIn .52s cubic-bezier(.34,1.2,.5,1) both; animation-delay:.25s;}
+  }
+  @keyframes stampIn{
+    0%{opacity:0; transform:translateY(-32px) scale(1.7) rotate(6deg);}
+    55%{opacity:1; transform:translateY(0) scale(.9) rotate(-5deg);}
+    72%{transform:scale(1.04) rotate(-4deg);}
+    100%{opacity:1; transform:scale(1) rotate(-4deg);}
+  }
+  .dateline{display:flex; align-items:center; gap:14px;}
+  .dateline .k{font-family:'DM Mono'; font-size:11px; letter-spacing:.26em; text-transform:uppercase; color:var(--goldL);}
+  .tx{height:1px; background:var(--verm2); width:64px; transform-origin:left;}
+  @media (prefers-reduced-motion:no-preference){
+    .tx{animation:tx 720ms cubic-bezier(.6,0,.2,1) both;}
+    @keyframes tx{from{transform:scaleX(0);} to{transform:scaleX(1);}}
+  }
+  .hero h1{
+    font-family:'Cormorant Garamond',Georgia,'Times New Roman',serif; font-weight:600;
+    font-size:clamp(31px,4.6vw,47px); line-height:1.12; color:var(--cream);
+    max-width:660px; margin-top:18px;
+  }
+  .hero .sub{
+    margin-top:14px; font-family:'DM Mono'; font-size:12.5px; letter-spacing:.14em;
+    text-transform:uppercase; color:#9C8E76;
+  }
+  .hero .sub b{color:var(--goldL); font-weight:500;}
+  .meta{
+    display:flex; flex-wrap:wrap; gap:9px 26px; margin-top:26px;
+    font-family:'DM Mono'; font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:#9C8E76;
+  }
+  .meta b{color:var(--cream); font-weight:500;}
+
+  /* ---------- the dispatch log (signature) ---------- */
+  .log{padding:8px 0 0;}
+  .entry{display:grid; grid-template-columns:var(--rail) 1fr; column-gap:var(--gap); align-items:start;}
+  .rail{position:relative; border-right:1px solid var(--hair); min-height:100%; padding:40px 22px 44px 0;}
+  .stamp{text-align:right;}
+  .stamp .t{font-family:'DM Mono'; font-weight:500; font-size:17px; color:var(--ink); letter-spacing:.02em;}
+  .stamp .p{margin-top:6px; font-family:'DM Mono'; font-size:10.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); line-height:1.5;}
+  .dot{position:absolute; right:-4.5px; top:46px; width:9px; height:9px; border-radius:50%; background:var(--verm); box-shadow:0 0 0 4px #FAF7F1;}
+  .dot.last{background:var(--gold);}
+  .doc{padding:40px 0 44px; min-width:0;}
+  .doc h2{font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; font-size:clamp(26px,3.3vw,33px); color:var(--ink); line-height:1.1;}
+  .doc .lead{margin-top:10px; font-size:16px; color:var(--muted); max-width:560px;}
+
+  /* media proof grid */
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(160px,1fr)); gap:13px; margin-top:22px;}
+  .tile{aspect-ratio:4/3; position:relative; border:1px solid var(--hair); cursor:pointer; overflow:hidden; transition:transform .18s ease, box-shadow .18s ease;}
+  .tile:hover{transform:translateY(-2px); box-shadow:0 6px 22px rgba(24,20,16,.10);}
+  .tile:focus-visible{outline:2px solid var(--verm); outline-offset:2px;}
+  .tile::after{content:''; position:absolute; left:0; right:0; bottom:0; height:48%; background:linear-gradient(180deg,transparent,rgba(20,15,10,.74)); pointer-events:none;}
+  .tile .cap{position:absolute; left:11px; bottom:9px; right:11px; z-index:2; font-family:'DM Mono'; font-size:11.5px; letter-spacing:.06em; font-weight:500; text-transform:uppercase; color:#FAF7F1;}
+  .g1{background:linear-gradient(135deg,#F6E9D4 0%,#E8C9A0 45%,#C8856B 100%);}
+  .g2{background:linear-gradient(135deg,#181410 0%,#3A2A1A 55%,#C2913F 130%);}
+  .g3{background:linear-gradient(135deg,#FAF7F1 0%,#EAD9C4 55%,#9E3322 160%);}
+  .g4{background:linear-gradient(135deg,#1A1F2A 0%,#34303A 50%,#9E3322 135%);}
+  .play{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); width:50px; height:50px; border-radius:50%; background:rgba(250,247,241,.93); display:flex; align-items:center; justify-content:center; z-index:2;}
+  .play::after{content:''; border-left:16px solid var(--verm); border-top:10px solid transparent; border-bottom:10px solid transparent; margin-left:4px;}
+
+  /* suppliers table */
+  .tscroll{overflow-x:auto; -webkit-overflow-scrolling:touch; margin-top:22px;}
+  table{width:100%; min-width:600px; border-collapse:collapse; font-size:16px;}
+  th{font-family:'DM Mono'; font-size:11.5px; letter-spacing:.13em; text-transform:uppercase; color:#5C5142; font-weight:500; text-align:left; padding:0 16px 10px 0; border-bottom:1px solid var(--ink);}
+  td{padding:14px 16px 14px 0; border-bottom:1px solid var(--hair); vertical-align:top;}
+  td:first-child{color:var(--ink); font-weight:700;}
+  .ok{color:var(--gold);}
+
+  /* observation */
+  .obs{font-family:'Cormorant Garamond',Georgia,serif; font-size:20px; line-height:1.6; color:var(--ink); max-width:680px; border-left:2px solid var(--gold); padding-left:22px; margin-top:22px;}
+  .obs .sgn{display:block; margin-top:16px; font-family:'DM Mono'; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted);}
+
+  /* ctas */
+  .ctas{display:flex; gap:13px; flex-wrap:wrap; margin-top:24px;}
+  .cta{font-family:'Manrope'; font-weight:700; font-size:15px; padding:15px 26px; cursor:pointer; letter-spacing:.01em; transition:transform .15s ease; border:1.5px solid transparent;}
+  .cta:hover{transform:translateY(-1px);}
+  .cta:focus-visible{outline:2px solid var(--gold); outline-offset:3px;}
+  .cta.prim{background:var(--verm); color:#fff;}
+  .cta.sec{background:transparent; border-color:var(--ink); color:var(--ink);}
+  .cta-note{margin-top:16px; font-size:15px; color:#5C5142; max-width:560px; line-height:1.55;}
+
+  /* footer (MEET brand only) */
+  footer{background:var(--ink); padding:36px 0 46px;}
+  .opby{font-family:'DM Mono'; font-size:11.5px; letter-spacing:.22em; text-transform:uppercase; color:#8A7C64; line-height:2.1;}
+
+  /* modal + toast */
+  .modal{position:fixed; inset:0; background:rgba(24,20,16,.86); display:none; align-items:center; justify-content:center; z-index:50; padding:24px;}
+  .modal.open{display:flex;}
+  .mbox{max-width:840px; width:100%;}
+  .mface{aspect-ratio:16/10; border:1px solid rgba(244,234,210,.25);}
+  .mcap{display:flex; justify-content:space-between; gap:16px; margin-top:12px; font-family:'DM Mono'; font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:var(--cream);}
+  .mclose{cursor:pointer; color:var(--gold); background:none; border:none; font:inherit; letter-spacing:.16em;}
+  .toast{position:fixed; left:50%; bottom:30px; transform:translateX(-50%) translateY(20px); background:var(--ink); color:var(--cream); font-family:'DM Mono'; font-size:12px; letter-spacing:.1em; padding:13px 22px; opacity:0; pointer-events:none; transition:opacity .25s ease, transform .25s ease; z-index:60; max-width:88vw; text-align:center;}
+  .toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+
+  /* ---------- mobile ---------- */
+  @media (max-width:720px){
+    .entry{grid-template-columns:1fr;}
+    .rail{border-right:none; border-top:1px solid var(--hair); padding:16px 0 0;}
+    .stamp{text-align:left; display:flex; align-items:baseline; gap:14px;}
+    .stamp .p{margin-top:0;}
+    .dot{position:static; display:inline-block; margin:0 0 0 0; box-shadow:none; align-self:center;}
+    .doc{padding:14px 0 34px;}
+    .seal{right:10px; top:10px;} .seal .glyph{width:62px; height:62px; font-size:34px;}
+  }
+  @media (max-width:640px){
+    body{font-size:16px;} td{font-size:15px;} th{font-size:11px;}
+    .meta{gap:8px 16px; font-size:12px;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none !important; transition:none !important;}
+  }
+  @media (prefers-color-scheme:dark){
+    html,body,.topbar,.log{background:#FAF7F1 !important;}
+    body{color:#2B241B !important;}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="wrap in">
+  <div class="mark">
+    <span class="tick"></span>
+    <a class="wm" href="meetinchina_landing.html">MEET <span class="brk">[</span>IN<span class="brk">]</span> CHINA</a>
+  </div>
+  <div class="status">Verified report ✓</div>
+</div></div>
+
+<header class="hero"><div class="wrap">
+  <div class="seal"><span class="glyph">见</span><span class="cap">jiàn · to meet</span></div>
+  <div class="dateline">
+    <span class="k">Filed dispatch · MIC-0042</span>
+    <span class="tx"></span>
+  </div>
+  <h1>Canton Fair, Phase 1 — your eyes in Hall 10.2.</h1>
+  <p class="sub">Filed remotely from Guangzhou. <b>You did not have to fly.</b></p>
+  <div class="meta">
+    <span>City · <b>Guangzhou</b></span>
+    <span>Date · <b>15 Oct 2026</b></span>
+    <span>Type · <b>MEET Remote</b></span>
+    <span>Interpreter · <b>Li Wenjing · MIC-2026-014</b></span>
+  </div>
+</div></header>
+
+<main class="wrap log">
+
+  <!-- entry 1 -->
+  <article class="entry">
+    <div class="rail"><div class="dot"></div><div class="stamp"><span class="t">09:40</span><span class="p">Hall 10.2<br>Entrance → A311</span></div></div>
+    <div class="doc">
+      <h2>On the floor</h2>
+      <p class="lead">Walked the aisle as it opened. Photographed and filmed what you would have stopped at.</p>
+      <div class="grid">
+        <div class="tile g1" tabindex="0" role="button" aria-label="Open: Hall 10.2, booth A311, wide shot" onclick="openModal('Hall 10.2 · Booth A311 · wide','g1')" onkeydown="kd(event,'Hall 10.2 · Booth A311 · wide','g1')"><div class="cap">Hall 10.2 · Booth A311</div></div>
+        <div class="tile g3" tabindex="0" role="button" aria-label="Open: film resin samples, close-up" onclick="openModal('Samples · film resin · close-up','g3')" onkeydown="kd(event,'Samples · film resin · close-up','g3')"><div class="cap">Samples · close-up</div></div>
+        <div class="tile g2" tabindex="0" role="button" aria-label="Open video: line walkthrough" onclick="openModal('Video · line walkthrough · 0:42','g2')" onkeydown="kd(event,'Video · line walkthrough · 0:42','g2')"><div class="play"></div><div class="cap">Video · line walkthrough</div></div>
+        <div class="tile g4" tabindex="0" role="button" aria-label="Open: price board, USD per MT" onclick="openModal('Price board · USD / MT','g4')" onkeydown="kd(event,'Price board · USD / MT','g4')"><div class="cap">Price board · USD/MT</div></div>
+        <div class="tile g2" tabindex="0" role="button" aria-label="Open: certificates wall" onclick="openModal('Certificates wall','g2')" onkeydown="kd(event,'Certificates wall','g2')"><div class="cap">Certificates wall</div></div>
+        <div class="tile g1" tabindex="0" role="button" aria-label="Open: warehouse stock" onclick="openModal('Warehouse · stock','g1')" onkeydown="kd(event,'Warehouse · stock','g1')"><div class="cap">Warehouse · stock</div></div>
+      </div>
+    </div>
+  </article>
+
+  <!-- entry 2 -->
+  <article class="entry">
+    <div class="rail"><div class="dot"></div><div class="stamp"><span class="t">12:10</span><span class="p">Booth<br>notes</span></div></div>
+    <div class="doc">
+      <h2>What we collected</h2>
+      <p class="lead">Booths worth your follow-up. Prices are indicative, taken on the floor — not quotes.</p>
+      <div class="tscroll"><table>
+        <thead><tr><th>Supplier</th><th>Booth</th><th>Product</th><th>Indicative</th><th>Contact</th></tr></thead>
+        <tbody>
+          <tr><td>Supplier A</td><td class="mono">10.2-A311</td><td>High-clarity film resin</td><td class="mono">$1,6xx/MT</td><td class="mono ok">WeChat ✓</td></tr>
+          <tr><td>Supplier B</td><td class="mono">10.2-B107</td><td>Engineering compounds</td><td class="mono">$1,8xx/MT</td><td class="mono ok">Card + WeChat ✓</td></tr>
+          <tr><td>Supplier C</td><td class="mono">10.2-C054</td><td>Masterbatch, food-contact line</td><td class="mono">on request</td><td class="mono ok">WeChat ✓</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </article>
+
+  <!-- entry 3 -->
+  <article class="entry">
+    <div class="rail"><div class="dot"></div><div class="stamp"><span class="t">14:30</span><span class="p">Filed<br>Guangzhou</span></div></div>
+    <div class="doc">
+      <h2>From the ground</h2>
+      <p class="obs">Booth A311 was the busiest in the hall — mostly Turkish and Polish buyers asking about film grades. The walkthrough video is from their showroom screen; they offered a plant visit within two weeks. Supplier B quoted higher but offered a smaller MOQ and faster samples. Supplier C avoided price talk until volumes are named — usual for masterbatch.
+      <span class="sgn">— Li Wenjing · MIC-2026-014 · moderated by MEET ops</span></p>
+    </div>
+  </article>
+
+  <!-- entry 4 — your move (no timestamp) -->
+  <article class="entry">
+    <div class="rail"><div class="dot last"></div><div class="stamp"><span class="t" style="color:var(--gold);">—</span><span class="p">Your<br>move</span></div></div>
+    <div class="doc">
+      <h2>Go deeper</h2>
+      <p class="lead">You have the floor. Pick the next step and we set it up.</p>
+      <div class="ctas">
+        <a class="cta prim" href="meet_sourcing.html" style="display:inline-flex; align-items:center; text-decoration:none;">Source it at scale &rarr;</a>
+        <button class="cta sec" onclick="toast('Request sent. We reply within 4 working hours.')">Request a factory visit</button>
+        <button class="cta sec" onclick="toast('Request sent. Verification scope follows by email.')">Verify a supplier</button>
+      </div>
+      <p class="cta-note">Source it at scale and we run the whole order — negotiation, QC, consolidation and shipping — from the suppliers in this report. A factory visit puts our interpreter and your agenda on the plant floor. Verification is a full audit: entity, capacity, certificates, and samples sent to an EU lab.</p>
+    </div>
+  </article>
+
+</main>
+
+<footer><div class="wrap">
+  <div class="opby">MEET [IN] CHINA · MEETINCHINA.EU<br>Confidential · prepared for client MIC-0042</div>
+</div></footer>
+
+<div class="modal" id="modal" onclick="closeModal(event)">
+  <div class="mbox">
+    <div class="mface" id="mface"></div>
+    <div class="mcap"><span id="mcap"></span><button class="mclose" type="button" onclick="document.getElementById('modal').classList.remove('open')">Close ✕</button></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+  var grads={
+    g1:'linear-gradient(135deg,#F6E9D4 0%,#E8C9A0 45%,#C8856B 100%)',
+    g2:'linear-gradient(135deg,#181410 0%,#3A2A1A 55%,#C2913F 130%)',
+    g3:'linear-gradient(135deg,#FAF7F1 0%,#EAD9C4 55%,#9E3322 160%)',
+    g4:'linear-gradient(135deg,#1A1F2A 0%,#34303A 50%,#9E3322 135%)'
+  };
+  function openModal(cap,g){
+    document.getElementById('mface').style.background=grads[g];
+    document.getElementById('mcap').textContent=cap;
+    document.getElementById('modal').classList.add('open');
+  }
+  function closeModal(e){ if(e.target.id==='modal') e.target.classList.remove('open'); }
+  function kd(e,cap,g){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); openModal(cap,g); } }
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') document.getElementById('modal').classList.remove('open'); });
+  var tt;
+  function toast(msg){
+    var t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show');
+    clearTimeout(tt); tt=setTimeout(function(){ t.classList.remove('show'); },2600);
+  }
+</script>
+</body>
+</html>

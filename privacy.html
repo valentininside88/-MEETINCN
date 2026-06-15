@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="only light">
+<meta name="supported-color-schemes" content="light">
+<title>MEET [IN] CHINA — Privacy</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.png" sizes="any">
+<link rel="apple-touch-icon" href="favicon.png">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Manrope:wght@500;700;800&family=DM+Mono:wght@400;500&family=Noto+Serif+SC:wght@700&display=swap" rel="stylesheet">
+<script>document.documentElement.className='js';</script>
+<style>
+  html{color-scheme:only light; background:#FAF7F1 !important;}
+  :root{--paper:#FAF7F1; --paper2:#F3EEE4; --ink:#0F0B07; --body:#2B241B; --muted:#6E6252;
+    --verm:#9E3322; --gold:#C2913F; --goldL:#E0BC74; --hair:#E2DACB; --cream:#F4EAD2;}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:#FAF7F1 !important; color:var(--body); font-size:17px; font-weight:500; line-height:1.7;
+       font-family:'Manrope',-apple-system,'Segoe UI',Roboto,Arial,sans-serif; overflow-x:hidden;}
+  .wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+  .brk{color:var(--verm);} a{color:var(--verm);} :focus-visible{outline:2.5px solid var(--verm); outline-offset:3px;}
+  .topbar{position:sticky; top:0; z-index:40; background:rgba(15,11,7,.92); backdrop-filter:blur(8px); border-bottom:1px solid #221A11;}
+  .topbar .in{display:flex; justify-content:space-between; align-items:center; padding:15px 24px; max-width:760px; margin:0 auto;}
+  .wm{font-family:'Manrope'; font-weight:800; font-size:16px; letter-spacing:.04em; color:var(--cream); text-decoration:none; white-space:nowrap;}
+  .back{font-family:'DM Mono',monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#B7A98D; text-decoration:none;}
+  .back:hover{color:var(--goldL);}
+  .hd{background:var(--ink); color:var(--cream); position:relative; overflow:hidden; padding:54px 0 46px;}
+  .hd .ghost{position:absolute; right:-20px; bottom:-90px; font-family:'Noto Serif SC',serif; font-weight:700; font-size:240px; line-height:1; color:rgba(194,145,63,.06); pointer-events:none;}
+  .hd .wrap{position:relative; z-index:2;}
+  .hd .vb{width:42px; height:5px; background:var(--verm); margin-bottom:18px;}
+  .hd .lbl{font-family:'DM Mono',monospace; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:var(--goldL);}
+  .hd h1{font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; font-size:clamp(34px,6vw,52px); line-height:1.08; margin-top:10px;}
+  .draft{background:#FBF1EC; border:1px solid var(--verm); color:var(--body); font-family:'DM Mono',monospace; font-size:12.5px; letter-spacing:.06em; padding:12px 16px; margin:26px 0 0;}
+  main{padding:34px 0 70px;}
+  h2{font-family:'Cormorant Garamond',Georgia,serif; font-weight:600; font-size:clamp(24px,3.6vw,32px); color:var(--ink); line-height:1.15; margin:36px 0 6px;}
+  .goldline{height:2px; background:linear-gradient(90deg,var(--gold),transparent); width:90px; margin:0 0 16px;}
+  p{margin-bottom:12px; color:#3A3127;}
+  ul{margin:0 0 14px; padding-left:20px;} li{margin-bottom:7px; color:#3A3127;}
+  .todo{font-family:'DM Mono',monospace; font-size:13px; letter-spacing:.04em; color:var(--verm); background:#FBF1EC; padding:2px 7px; border-radius:2px;}
+  .muted{color:var(--muted); font-size:15px;}
+  footer{background:var(--ink); padding:42px 0 52px; margin-top:30px; position:relative; overflow:hidden;}
+  footer::before{content:''; position:absolute; inset:0; background:radial-gradient(70% 120% at 100% 0%, rgba(194,145,63,.10), transparent 60%); pointer-events:none;}
+  footer .wrap{position:relative; z-index:2;}
+  .fglyph{font-family:'Noto Serif SC',serif; font-size:30px; color:rgba(194,145,63,.5); line-height:1; margin-bottom:14px;}
+  .fwm{font-family:'Manrope'; font-weight:800; font-size:17px; color:var(--cream); letter-spacing:.04em;}
+  .fatm{font-family:'DM Mono',monospace; font-size:10.5px; letter-spacing:.3em; color:var(--goldL); margin-top:10px; text-transform:uppercase;}
+  .flinks{display:flex; gap:22px; flex-wrap:wrap; margin-top:18px;}
+  .flinks a{font-family:'DM Mono',monospace; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#8A7C64; text-decoration:none;}
+  .flinks a:hover{color:var(--goldL);}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important;}}
+  @media (prefers-color-scheme:dark){html,body{background:#FAF7F1 !important;} body{color:#2B241B !important;}}
+</style>
+</head>
+<body>
+
+<nav class="topbar"><div class="in">
+  <a class="wm" href="meetinchina_landing.html">MEET <span class="brk">[</span>IN<span class="brk">]</span> CHINA</a>
+  <a class="back" href="meetinchina_landing.html">&larr; Back to site</a>
+</div></nav>
+
+<header class="hd"><div class="wrap">
+  <div class="ghost">见</div>
+  <div class="vb"></div>
+  <div class="lbl">Legal</div>
+  <h1>Privacy</h1>
+</div></header>
+
+<main><div class="wrap">
+  <div class="draft">DRAFT — structure only. Confirm the controller, retention and authority details, and have it reviewed before going live.</div>
+
+  <h2>Who is responsible</h2><div class="goldline"></div>
+  <p>The controller for data processed through this website is <span class="todo">[ controller name + address ]</span>. Contact for privacy matters: <span class="todo">[ privacy contact email ]</span>.</p>
+
+  <h2>What we collect</h2><div class="goldline"></div>
+  <p>When you submit a form on this site (a quote request or an Academy application), we receive the details you enter — typically your name, email, and the message or fields of that form (e.g. city, languages, what you source). We do not ask for more than is needed to reply.</p>
+
+  <h2>How form submissions are processed</h2><div class="goldline"></div>
+  <p>Forms are submitted through <span class="todo">[ form processor — e.g. Web3Forms ]</span>, which forwards your message to our inbox. Their handling of the data is governed by their own terms: <span class="todo">[ processor privacy-policy link ]</span>. Legal basis: your request / pre-contractual steps (GDPR Art. 6(1)(b)) and our legitimate interest in responding (Art. 6(1)(f)).</p>
+
+  <h2>Cookies &amp; analytics</h2><div class="goldline"></div>
+  <p><span class="todo">[ Confirm current state. As built, the site sets no tracking cookies and runs no analytics. If you add analytics later, disclose it here and add consent if required. ]</span></p>
+
+  <h2>Hosting</h2><div class="goldline"></div>
+  <p>The site is served as static files by <span class="todo">[ hosting provider ]</span>. The host may process technical access logs (e.g. IP address) to deliver the site securely — <span class="todo">[ confirm with host's DPA ]</span>.</p>
+
+  <h2>How long we keep it</h2><div class="goldline"></div>
+  <p>We keep enquiry data only as long as needed to handle your request and any follow-up, then delete it — <span class="todo">[ state retention period ]</span>.</p>
+
+  <h2>Your rights</h2><div class="goldline"></div>
+  <p>Under the GDPR you have the right to:</p>
+  <ul>
+    <li>access the data we hold about you;</li>
+    <li>have inaccurate data corrected;</li>
+    <li>have your data erased;</li>
+    <li>restrict or object to processing;</li>
+    <li>receive your data in a portable format;</li>
+    <li>lodge a complaint with a supervisory authority — <span class="todo">[ name your competent authority ]</span>.</li>
+  </ul>
+  <p>To exercise any of these, contact us at the address above.</p>
+
+  <p class="muted">Last updated: <span class="todo">[ date ]</span></p>
+</div></main>
+
+<footer><div class="wrap">
+  <div class="fglyph">见</div>
+  <div class="fwm">MEET <span class="brk">[</span>IN<span class="brk">]</span> CHINA</div>
+  <div class="fatm">FEEL THE ATMOSPHERE [ INSIDE ] CHINA</div>
+  <div class="flinks"><a href="meetinchina_landing.html">For clients</a><a href="meetinchina_interpreters.html">For interpreters</a><a href="privacy.html">Privacy</a><a href="imprint.html">Imprint</a></div>
+</div></footer>
+
+</body>
+</html>
